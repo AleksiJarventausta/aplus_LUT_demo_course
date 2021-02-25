@@ -5,11 +5,21 @@
 
 # The mount directory from config.yaml is in /exercise.
 # Append the required support files to test user solution.
-cp /exercise/*.js .
 
 # "capture" etc description in https://github.com/apluslms/grading-base
 
-capture nodejs tests.js
+git clone "$(cat /submission/user/gitsource)" /submission/user-repo
+cd /submission/user-repo/
+PORT=8082
+npm i
+./node_modules/parcel-bundler/bin/cli.js index.html --port $PORT &
+server_pid=$!
+
+cd /wdio
+node_modules/.bin/wdio 
+capture node wdio-render.js wdio-0-0-json-reporter.log
+
+kill $server_pid
 
 err-to-out
 grade

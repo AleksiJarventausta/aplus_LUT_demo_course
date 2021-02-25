@@ -42,8 +42,6 @@ Scala
 
 Javascript
 ..........
-.. submit:: javascript 10
-  :config: exercises/hello_javascript/config.yaml
 
 .. submit:: clock 10
   :config: exercises/clock/config.yaml

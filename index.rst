@@ -18,4 +18,5 @@ Other content is not visible in A+.
   :maxdepth: 1
 
   start_here/index
+  demo_exercises/index
   sample_exercises/index
