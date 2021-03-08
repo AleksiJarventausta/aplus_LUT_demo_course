@@ -1,0 +1,23 @@
+---
+title: The Shell Script Example
+description: An example of grading script using the testcase tool
+instructions: |
+    <h4>The problem</h4>
+    <p>
+        In this exercise you must implement a shell script tbat
+        reads two numbers per line and calculates addition.
+        All results that are greater than 10 should be limited to 10.
+        Your script should print line per input line in format
+        <code>a + b = c</code> where a and b are the given numbers
+        and c is the result.
+    </p>
+
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: assignment.c
+
+container:
+  image: apluslms/grade-c:latest
+  mount: exercises/c_test
+  cmd: /exercise/run.sh

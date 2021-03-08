@@ -6,3 +6,6 @@ Exercises examples
 
 .. submit:: python 10
   :config: exercises/python_test/config.yaml
+
+.. submit:: c 10
+  :config: exercises/c_test/config.yaml
