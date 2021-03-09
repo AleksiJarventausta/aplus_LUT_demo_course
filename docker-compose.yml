@@ -10,6 +10,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/aplus:/tmp/aplus
       - .:/srv/courses/default:ro
+      - ./docker-compose-run.sh:/srv/docker-compose-run.sh
+    ports:
+      - -k
     ports:
       - "8080:8080"
   plus:
