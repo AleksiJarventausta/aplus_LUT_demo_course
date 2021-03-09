@@ -3,3 +3,6 @@ assignment.out:
 
 clean:
 	rm assignment.out
+
+valgrind: assignment.out
+	valgrind --error-exitcode=1 --leak-check=full ./assignment.out cars.txt

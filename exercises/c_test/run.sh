@@ -5,11 +5,15 @@
 # points are given.
 # Testcase writes all information to files under /feedback/<number>/, where
 # <number> is the first free number starting from 0.
+apt_install valgrind
 
 cp /exercise/Makefile /submission/user/Makefile
 cp /exercise/cars.txt /submission/user/cars.txt
 cd /submission/user/
-make assignment.out
+
+testcase -t "Valgrind" -p 2\
+    make valgrind
+
 
 testcase -t "Test" -p 1 \
     stdio-diff -S /exercise/given1.in /exercise/expected1.out \
