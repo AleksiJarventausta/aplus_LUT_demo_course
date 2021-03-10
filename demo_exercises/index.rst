@@ -1,5 +1,5 @@
 LUT Demo exercises
-================
+==================
 
 .. toctree::
   :maxdepth: 1

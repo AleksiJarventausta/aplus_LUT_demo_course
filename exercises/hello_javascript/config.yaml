@@ -1,13 +1,24 @@
 ---
-title: Hello JavaScript!
-description: An example of grading JavaScript code with Node.js
+title: NodeJS assignment example
+description: An example of grading a web application with webdriver.io.
 instructions: |
+  <h4>The problem</h4>
   <p>
   Create a user interface that has one button and one paragraph. 
   The button should have id ”hello_button”, and the paragraph should have id "text_label". 
   Pressing the button should change the text in paragraph so that it has "Hello World!" text.
 
-  Then, add a textarea element that has an id “text_insert” to the user interface. Modify the code so that when you have given text to the textarea, it will update the paragraph to the written text in real time. 
+  Then, add a textarea element that has an id “text_insert” to the user interface. 
+  Modify the code so that when you have given text to the textarea, it will update the paragraph to the written text in real time. 
+  </p>
+  <h4>Example solution</h3>
+  <p> 
+    An example solution for this assignment can be found from: 
+  </p>
+  <a href="https://github.com/AleksiJarventausta/web-applications-demo-solution">
+    https://github.com/AleksiJarventausta/web-applications-demo-solution.git
+  </a>
+  <p>
   </p>
 view_type: access.types.stdasync.acceptGitAddress
 container:
