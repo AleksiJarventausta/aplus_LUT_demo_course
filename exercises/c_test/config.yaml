@@ -1,15 +1,16 @@
 ---
-title: The Shell Script Example
-description: An example of grading script using the testcase tool
+title: C assignment example
+description: An example of grading script using the testcase tool and valgrind
 instructions: |
     <h4>The problem</h4>
     <p>
-        In this exercise you must implement a shell script tbat
-        reads two numbers per line and calculates addition.
-        All results that are greater than 10 should be limited to 10.
-        Your script should print line per input line in format
-        <code>a + b = c</code> where a and b are the given numbers
-        and c is the result.
+        In this exercise you must implement a linked list, that 
+        prints the cars that are given in from a file namen cars.txt.
+    </p>
+    <h4>Assessment</h4>
+    <p>
+      This assignment has two tests. The first one is running the assignment in valgrind to check if it has issues such as memory leaks.
+      Second test is a basic I/O test that compares the output of the assignment to the expected one.
     </p>
 
 view_type: access.types.stdasync.acceptFiles
