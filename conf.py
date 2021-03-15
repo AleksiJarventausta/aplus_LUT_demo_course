@@ -21,7 +21,7 @@ import os
 course_open_date = '2020-08-01'
 course_close_date = '2021-08-01'
 questionnaire_default_submissions = 5
-program_default_submissions = 10
+program_default_submissions = 100
 default_max_group_size = 1
 use_wide_column = False
 static_host = os.environ.get('STATIC_CONTENT_HOST')
