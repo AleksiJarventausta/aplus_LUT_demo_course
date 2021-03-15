@@ -17,6 +17,4 @@ Other content is not visible in A+.
 .. toctree::
   :maxdepth: 1
 
-  start_here/index
   demo_exercises/index
-  sample_exercises/index
