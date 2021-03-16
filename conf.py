@@ -18,8 +18,8 @@ import os
 
 
 # -- Aplus configuration --------------------------------------------------
-course_open_date = '2020-08-01'
-course_close_date = '2021-08-01'
+course_open_date = '2021-03-16 11:00'
+course_close_date = '2021-08-01 12:00'
 questionnaire_default_submissions = 5
 program_default_submissions = 100
 default_max_group_size = 1
@@ -98,7 +98,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Sample'
-copyright = '2016, NN'
+copyright = '2021, NN'
 author = 'NN'
 
 # The version info for the project you're documenting, acts as replacement for
