@@ -25,3 +25,4 @@ container:
   image: apluslms/grade-web:wdio-0.7-3.0
   mount: exercises/hello_javascript
   cmd: /exercise/run.sh
+  enable_network: true
