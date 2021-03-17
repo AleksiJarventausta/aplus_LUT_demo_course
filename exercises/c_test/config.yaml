@@ -19,6 +19,6 @@ files:
     name: assignment.c
 
 container:
-  image: apluslms/grade-c:latest
+  image: apluslms/grade-c:8.3-3.2
   mount: exercises/c_test
   cmd: /exercise/run.sh

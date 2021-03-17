@@ -5,7 +5,6 @@
 # points are given.
 # Testcase writes all information to files under /feedback/<number>/, where
 # <number> is the first free number starting from 0.
-apt_install valgrind
 
 cp /exercise/Makefile /submission/user/Makefile
 cp /exercise/cars.txt /submission/user/cars.txt
