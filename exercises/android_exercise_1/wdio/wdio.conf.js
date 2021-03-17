@@ -51,7 +51,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 1, //
         platformName: "Android",
-        platformVersion: "7",
+        platformVersion: "10",
         app: "application.apk",
       },
     ],

@@ -24,7 +24,7 @@ never_wait: true
 accepted_message: Your submission has been accepted and is being graded by means of an automated system. This can take up to 5 minutes. Please refresh this page after a couple of minutes to see the result.
 
 container:
-  image: aolecloudscape/android-grader:20200528143500759efb
+  image: aleksij/grade-android:0.1-alpha
   mount: exercises/android_exercise_1
   cmd: /exercise/run.sh
   privileged: True
