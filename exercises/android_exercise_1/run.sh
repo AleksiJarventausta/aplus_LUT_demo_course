@@ -1,31 +1,67 @@
 #!/bin/bash
 
-cp /submission/user/application.apk /wdio/
-cp -R /exercise/wdio/. /wdio/
+export APPIUM_SERVER="${APPIUM_SERVER:-http://127.0.0.1:4723}"
+
+export SCREENSHOT_DIR="${SCREENSHOT_DIR:-/screenshots/}"
+
+# Start adb server
+adb start-server
+
+# Start appium 
+appium &
 
 # enable hardware keyboard
-sed -i 's/hw.keyboard=no/hw.keyboard=yes/'  /root/.android/avd/test.avd/config.ini
+sed -i 's/hw.keyboard=no/hw.keyboard=yes/'  /root/.android/avd/nexus.avd/config.ini
 
 # Start emulator
-xvfb-run /opt/android-sdk/emulator/emulator -avd test -netdelay none -netspeed full > /dev/null 2>&1 &
+xvfb-run emulator64-x86 -avd nexus -netdelay none -netspeed full > /dev/null 2>&1 &
 
 # Don't exit until emulator is loaded
 output=''
 while [[ ${output:0:7} != 'stopped' ]]; do
-  output=`/opt/android-sdk/platform-tools/adb shell getprop init.svc.bootanim`
+  output=`adb shell getprop init.svc.bootanim`
   sleep 1
 done
 
 # press back button in case there is a system error alert on startup (happens sometimes)
-/opt/android-sdk/platform-tools/adb shell input keyevent 4
+adb shell input keyevent 4
 
 # disable on-screen keyboard
-/opt/android-sdk/platform-tools/adb shell settings put secure show_ime_with_hard_keyboard 0
+adb shell settings put secure show_ime_with_hard_keyboard 0
 
-cd /wdio
+# Copy dependencies
+cp -R /exercise/.m2 /root/
+
+# Make writeable directory for compiling test
+mkdir /exercise-run/
+cp -R /exercise/* /exercise-run/
+ 
+touch /feedback/out
+touch /feedback/err
+
 # Run tests
-./node_modules/.bin/wdio 
-capture node wdio-render.js wdio-0-0-json-reporter.log
+echo "<h3>Test Results</h3>" >> /feedback/out
+mvn -o -q -f /exercise-run/HelloUserTest/pom.xml test -P HelloUserTest >> /test-output
 
-err-to-out
+ERROR=`awk '/ERROR/{print NR;exit}' /test-output`
+
+# Send mvn [ERROR] lines to err file
+if [ -n "$ERROR" ]
+then
+   pre head -n `expr $ERROR - 1` /test-output >> /feedback/out
+   pre tail -n +${ERROR} /test-output >> /feedback/err
+else
+   pre cat /test-output >> /feedback/out
+fi
+
+# Send screenshot
+convert -format "jpg" -quality 40 -resize 288x480  /screenshots/step.png /screenshots/step.jpg
+echo "<h3>Screenshot</h3>" >> /feedback/out
+echo "<img src=\"data:image/jpeg;base64,"$(base64 -w 0 /screenshots/step.jpg)"\" />" >> /feedback/out
+
+# Send app logs
+echo "<h3>Android Logcat Output</h3>" >> /feedback/out
+pre adb logcat -s MCC -d >> /feedback/out
+
+# Send results back to A+
 grade

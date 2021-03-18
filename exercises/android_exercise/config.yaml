@@ -1,0 +1,30 @@
+---
+title: Android assignment example
+description: Append text from EditText to TextView
+instructions: |
+    <h4>The problem</h4>
+    <p>
+      Create a user interface that has one button and one paragraph. 
+      The button should have id "btnSubmit", and the paragraph should have id "txtResult". 
+      Pressing the button should change the text in paragraph so that it has "Hello World!" text.
+    </p>
+
+    <h4>Upload APK file</h4>
+    <p>
+        You can generate the APK file from Android Studio by using the <b>Build APK</b> option, 
+        which produces a debug APK file. The name that you choose for the uploaded file is 
+        irrelevant and does not affect the automated grading.
+    </p><br />
+
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: application.apk
+never_wait: true
+accepted_message: Your submission has been accepted and is being graded by means of an automated system. This can take up to 5 minutes. Please refresh this page after a couple of minutes to see the result.
+
+container:
+  image: aleksij/grade-android:0.1-alpha
+  mount: exercises/android_exercise
+  cmd: /exercise/run.sh
+  privileged: True
