@@ -25,6 +25,6 @@ accepted_message: Your submission has been accepted and is being graded by means
 
 container:
   image: aleksij/grade-android:0.1-alpha
-  mount: exercises/android_exercise
+  mount: exercises/custom_android_exercise
   cmd: /exercise/run.sh
   privileged: True

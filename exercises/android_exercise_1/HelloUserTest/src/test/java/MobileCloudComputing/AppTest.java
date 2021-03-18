@@ -49,18 +49,15 @@ public class AppTest
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
    }
 
-    @Test(description="Enter an input text and check that it is appended to the TextView.")
-    public void HelloUserTest() throws IOException, InterruptedException {
+    @Test(description="Press a button to change text in textView.")
+    public void HelloButtonTest() throws IOException, InterruptedException {
       String currId = null;
 
       try { 
-         // input value into EditText
-         Random rand = new Random();
-         int n = rand.nextInt(25000) + 1; 
-         currId = EditTextId;
+         // check textview doesn't have 'Hello World!' already.
+         currId = TextViewId;
          takeScreenshot(screenshotDir+"/step.png");
-         driver.findElement(By.id(EditTextId)).sendKeys(""+n);
-
+		   Assert.assertNotEquals(driver.findElement(By.id(TextViewId)).getText(), "Hello World!");
          // press button
 		   TouchAction t = new TouchAction(driver);
          currId = ButtonId;
@@ -70,7 +67,7 @@ public class AppTest
          // check input text is appended to result
          currId = TextViewId;
          takeScreenshot(screenshotDir+"/step.png");
-		   Assert.assertEquals(driver.findElement(By.id(TextViewId)).getText(), "Hello "+n, "The TextView contains the wrong text.");
+		   Assert.assertEquals(driver.findElement(By.id(TextViewId)).getText(), "Hello World!");
 
       } catch (NoSuchElementException e) {
          Assert.fail("Could not find element with id '"+currId+"'. Please check the assignment instruction and use the provided View ids.");

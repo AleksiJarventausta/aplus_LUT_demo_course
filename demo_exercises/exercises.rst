@@ -10,8 +10,5 @@ Exercises examples
 .. submit:: c 10
   :config: exercises/c_test/config.yaml
 
-.. submit:: android_debug 10
-  :config: exercises/android_exercise_1/config.yaml
-
 .. submit:: android 10
-  :config: exercises/android_exercise/config.yaml
+  :config: exercises/android_exercise_1/config.yaml
