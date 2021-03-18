@@ -10,6 +10,11 @@ sed -i 's/hw.keyboard=no/hw.keyboard=yes/'  /root/.android/avd/test.avd/config.i
 xvfb-run /opt/android-sdk/emulator/emulator -avd test -netdelay none -netspeed full > /dev/null 2>&1 &
 
 # Don't exit until emulator is loaded
+output=''
+while [[ ${output:0:7} != 'stopped' ]]; do
+  output=`/opt/android-sdk/platform-tools/adb shell getprop init.svc.bootanim`
+  sleep 1
+done
 
 # press back button in case there is a system error alert on startup (happens sometimes)
 /opt/android-sdk/platform-tools/adb shell input keyevent 4
