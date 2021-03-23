@@ -1,8 +1,3 @@
-## A course template for A-plus learning environment
-
-This course template contains the necessary files and configurations to start authoring a new course for the
-[A+ e-learning system](https://plus.cs.aalto.fi/). This template can be freely modified and adapted to your needs.
-
 ## Requirements
 
 This course templated has been tested in Ubuntu Linux environment. Nevertheless, this course should also work on any
@@ -24,10 +19,10 @@ wich of the following two approaches to take.
 
 You can download this template recursively (that means including the [A-plus-rst-tools](https://github.com/apluslms/a-plus-rst-tools)
 
-<small>Clone the repository using an SSH key.</small>
+<small>Clone the repository.</small>
 
 ```sh
-git clone --recursive git@github.com:apluslms/aplus-course-template.git <name of your course>
+git clone --recursive https://github.com/AleksiJarventausta/aplus_LUT_demo_course.git <name of your course>
 ```
 
 ### Option B: Clone the repository and the submodules manually
@@ -35,18 +30,14 @@ git clone --recursive git@github.com:apluslms/aplus-course-template.git <name of
 You can download the main repository and initialise the [A-plus-rst-tools](https://github.com/apluslms/a-plus-rst-tools)
 submodule manually.
 
-<small>Clone the repository using an SSH key.</small>
+<small>Clone the repository.</small>
 
 ```sh
-git clone git@github.com:apluslms/aplus-course-template.git <name of your course>
+git clone https://github.com/AleksiJarventausta/aplus_LUT_demo_course.git <name of your course>
 git submodule init && git submodule update
 ```
 
 ---
-
-The previous snippets of code used SSH keys to download the course template. Nevertheless, you can also download the
-repositories using HTTPS or use GitHub Desktop. More information about how to clone repositories can be found in the
-[GitHub Documentation.](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
 ## Run
 
@@ -93,20 +84,6 @@ repositories using HTTPS or use GitHub Desktop. More information about how to cl
 In order to save your work and publish the course in [A+ e-learning system](https://plus.cs.aalto.fi/) you must store
 the course project in <version.aalto.fi>.
 
-### ❗️ Important
-
-We **STRONGLY** recommend storing the course under the [course group](https://version.aalto.fi/gitlab/course). If you
-do not have privileges to do so. You can send an email to <aplusguru@cs.aalto.fi> (We will set up the repository for
-you).
-
-If you do not want to store your course repository under the _course group_ in <version.aalto.fi>, you can create a
-private repository. However, you **MUST** add the following people as "reporters" in your repository.
-
--   Teemu Lehtinen - @lehtint6
--   Markku Riekkinen - @riekkim1
--   Jhosimar Aguacia - @aguacij1
-    .
-
 ## Additional information
 
 **A+** has a wide variety of tools and configurations. Therefore, you may check all the different sources of information
@@ -117,8 +94,3 @@ available on our webpages and repositories.
 -   [A+ GitHub organization](https://github.com/apluslms/)
 -   [LeTech GitHub organization](https://github.com/Aalto-LeTech)
 -   [EDIT Wiki](https://wiki.aalto.fi/display/EDIT/)
-
-## Contact us
-
-Contact us by email: aplusguru@cs.aalto.fi
-Contact us in Slack: <https://apluslms.slack.com/>, channel:#a-plus-help
