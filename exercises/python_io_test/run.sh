@@ -22,8 +22,3 @@ testcase -t "Saippuakauppias" -p 1 \
     python3 /submission/user/assignment.py
 # "capture" etc description in https://github.com/apluslms/grading-base
 
-# Python unit tests write output both to standard output stream and to
-# standard error output stream. The command 'err-to-out' appends the contents
-# of the error stream to the output stream so that the student can see all the
-# output the tests have created.
-err-to-out
