@@ -1,0 +1,17 @@
+---
+title: Python assignment example
+description: A simple grading example with Python code
+instructions: |
+    <h4>The problem</h4>
+    <p>
+      Return the assignment file into the box below.
+    </p>
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: assignment.py
+
+container:
+  image: apluslms/grade-python:3.7-3.2.3-3.0
+  mount: exercises/python_io_test
+  cmd: /exercise/run.sh
